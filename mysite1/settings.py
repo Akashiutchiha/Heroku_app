@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+
 import os
 import dj_database_url
 import django_on_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,15 +24,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-bpw(ynf!3hnt86xo$i+=2&k_k$b6=!c3*d7bf=2gj5q06p#tw'
-
+SECRET_KEY = 'SECRET_KEY'
+#-bpw(ynf!3hnt86xo$i+=2&k_k$b6=!c3*d7bf=2gj5q06p#tw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://mysite1.herokuapp.com',
-    'https://www.mysite1.herokuapp.com',
-    'mysite1.herokuapp.com',
+    'https://wiseview01.herokuapp.com',
+    'https://www.wiseview01.herokuapp.com',
+    'wiseview01.herokuapp.com',
     '127.0.0.1',
     'localhost'
 ]
@@ -45,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
+    'main',
     'django_on_heroku'
 ]
 
@@ -136,5 +138,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static")
 )
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 import django_on_heroku
 django_on_heroku.settings(locals())
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
