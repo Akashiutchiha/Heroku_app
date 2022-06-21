@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps',
+    'main.apps.MainConfig',
     'django_on_heroku'
 ]
 
