@@ -25,9 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-bpw(ynf!3hnt86xo$i+=2&k_k$b6=!c3*d7bf=2gj5q06p#tw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['<url>']
+ALLOWED_HOSTS = [
+    'https://mysite1.herokuapp.com',
+    'https://www.mysite1.herokuapp.com',
+    'mysite1.herokuapp.com',
+    '127.0.0.1',
+    'localhost'
+]
 
 
 # Application definition
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'django_on_heroku'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +65,9 @@ ROOT_URLCONF = 'mysite1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
