@@ -1,0 +1,28 @@
+#id_name {
+    text-align: left;
+
+}
+#id_adresse{
+    text-align: left;
+}
+#id_name_book {
+    text-align: left;
+
+}
+#id_author {
+    text-align: left;
+}
+#id_cover_picture_book {
+    text-align: left;
+}
+button {
+    margin-top: 3px;
+    background-color: rgb(3, 255, 66);
+    height: 1cm;
+    width: 3cm;
+}
+h1{
+    margin-left: 2cm;
+    text-align: center;
+
+}
